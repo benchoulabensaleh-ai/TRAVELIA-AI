@@ -1,26 +1,18 @@
-# TRAVELIA AI
+# TRAVELIA AI — MVP
+Voice-first adaptive travel agent for the ElevenLabs Future of Voice AI challenge.
 
-Voice-first adaptive travel agent.
+MVP: personalized itinerary, weather-aware replanning, places/restaurants/routes tools, budget, and explicit booking confirmation.
 
-## MVP architecture
-Voice -> ElevenLabs Agent -> Travel Orchestrator -> Tools -> Itinerary Engine -> User confirmation -> Action.
-
-Initial tools: weather, activities, restaurants, routes, itinerary creation, itinerary replanning.
-
-## Local backend
-```bash
+## Backend
 cd backend
 python -m venv .venv
-# Windows: .venv\\Scripts\\activate
+# Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8000
-```
 
-## Local frontend
-```bash
+## Frontend
 cd frontend
 npm install
 npm run dev
-```
 
-Never put API secrets in frontend code or commit `.env` files.
+Copy `.env.example` to `.env` where needed.

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .routes.health import router as health_router
 from .routes.travel import router as travel_router
+from .routes.elevenlabs import router as elevenlabs_router
 
 app = FastAPI(title="TRAVELIA AI API", version="0.1.0")
 app.add_middleware(
@@ -13,6 +14,7 @@ app.add_middleware(
 )
 app.include_router(health_router, prefix="/api")
 app.include_router(travel_router, prefix="/api")
+app.include_router(elevenlabs_router, prefix="/api")
 
 @app.get("/")
 def root():
